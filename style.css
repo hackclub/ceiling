@@ -1,0 +1,126 @@
+* {
+    cursor: url("cursor.png"), auto;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: linear-gradient(to bottom, skyblue, white 80vh); */    
+    background-image: linear-gradient(to bottom, #87CEEBa0, #ffffffa0), url(ceilings.jpg);
+    background-size: 100px;
+    
+    padding:  0 30px;
+    box-sizing: border-box;
+    margin-top: 0;
+    font-family: "Coral Pixels", serif;
+    font-size: 1.5em;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+#hackclub-flag {
+    width: 200px;
+    top: 0;
+    left: 0;
+    position: relative;
+}
+
+#ceiling-main-img {
+    width: 60vw;
+    height: max(70vh, 500px);
+    animation: stretch 2s linear infinite;
+
+    
+}
+
+#ceilings {
+    width: 100vw;
+    min-height: 40px;
+    padding-block: 12px;
+    text-align: center;
+    background-image: url(ceilings.jpg);
+    background-attachment: fixed;
+    background-size: 300px;
+    margin-left: -40px;
+    margin-block: 32px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+#ceilings p {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    filter: drop-shadow(0px 3px 3px black);
+    font-family: "Nabla";
+    transform: scale(1.5);
+}
+
+#title-text {
+    font-size: 4.5em;
+    text-align: center;
+    font-family: "Rubik Puddles";
+    text-shadow: dodgerblue 0px 5px 5px;
+    margin-bottom: 0;
+
+}
+#title-text span {
+    animation-delay: var(--n);
+    animation: wave 2s linear var(--n) infinite forwards running;
+    position: relative;
+
+}
+
+
+@keyframes wave{
+  0%    {top: 0px;}
+  25%   {top: -10px;}
+  50%   {top: 0px;}
+  75%  {top: 10px;}
+  100% {top: 0px;}
+}
+
+@keyframes stretch {
+    0% {transform: scaleX(100%)}
+    50% {transform: scaleX(97%)}
+    100% {transform: scaleX(100%)}
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+
+#hccs {
+    width: 100%;
+    display: flex;
+    height: 250px;
+    max-width: 200vw;
+    margin-inline: auto;
+}
+#hccs img {
+    width: 50%;
+    object-fit: fill;
+}
+
+#first-submit-button {
+    width: 100%;
+    text-align: center;
+}
+#first-submit-button img {
+    width: 20vw;
+}
+
+#submits {
+    position: relative;
+    width: 100%;
+}
+#submits a {
+    position: absolute;
+}
