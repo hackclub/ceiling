@@ -6,8 +6,8 @@
     <meta name="description" content="hackatime 8 hours and we will give you a ceiling">
     <meta property="og:image" content="/ceiling.jpg">
     <meta name="twitter:image" content="/ceiling.jpg">
-    <link rel="icon" href="cursor_original.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/cursor_original.png">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Rubik+Puddles&display=swap" rel="stylesheet"></head>
@@ -18,77 +18,61 @@
 
     <h1 id="title-text"><span style="--n:-1800ms">h</span><span style="--n:-1700ms">a</span><span style="--n:-1600ms">c</span><span style="--n:-1500ms">k</span> <span style="--n:-1400ms">c</span><span style="--n:-1300ms">l</span><span style="--n:-1200ms">u</span><span style="--n:-1100ms">b</span> <span style="--n:-1000ms">c</span><span style="--n:-900ms">e</span><span style="--n:-800ms">i</span><span style="--n:-700ms">l</span><span style="--n:-600ms">i</span><span style="--n:-500ms">n</span><span style="--n:-400ms">g</span></h1>
     <div id="hccs">
-        <img src="hcc.gif"></img>
-        <img src="hcc2.gif"></img>
+        <img src="/hcc.gif"></img>
+        <img src="/hcc2.gif"></img>
     </div>
-    <p style="text-align: center">ceiling v1 has ended. ceiling v2 may run soon. give us your email to get notified when it launches!</p>
-    <p style="text-align: center">make anything you want, get a ceiling and really cool prizes/merch.</p>
-    <div id="comment-area" style="text-align: center; font-family: inherit;">
-        <style>
-          input::placeholder {
-            opacity: 0.5;
-          }
-        </style>
-        <input type="email" id="comment-input" placeholder="put ur email here!!!" style="padding: 8px; font-family: inherit; font-size: inherit;">
-        <button id="comment-submit" onclick="submitComment()" style="padding: 8px; font-family: inherit; font-size: inherit;">YIPPEE GIVE ME EMAIL</button>
-        <p><span id="comment-status"></span></p>
-    </div>
-    <script>
-        async function submitComment() {
-            const input = document.getElementById('comment-input');
-            const status = document.getElementById('comment-status');
-            const value = input.value.trim();
-            if (!value) return;
-            status.textContent = 'eating...';
-            try {
-                const res = await fetch('/api/submit-email', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: value })
-                });
-                if (res.ok) {
-                    status.textContent = 'ok we got your email!!';
-                    input.value = '';
-                } else {
-                    status.textContent = 'error :( ask in #ceiling channel for help!';
-                }
-            } catch {
-                status.textContent = 'error :( ask in #ceiling channel for help!';
-            }
-        }
-    </script>
+    <p style="text-align:center">ship anything u want for 8 hours. get a ceiling.</p>
+    <p id="first-submit-button"><a href="https://forms.hackclub.com/ceiling">
+         <img src="/submit1.gif" alt="">
+    </a></p>
+    <p style="text-align: center">deadline EXTENDED to march 22th!!!</p>
 
-    <p style="text-align: center"><a href="v1">visit ceiling v1 here</a></p>
-
-    <img id="ceiling-main-img" src="ceiling.jpg" style="display: inline"></img>
-    <img src="strategy.gif" alt="" style="display: inline; vertical-align: top; margin-top: 5%; margin-left: 60px;">
+    <img id="ceiling-main-img" src="/ceiling.jpg" style="display: inline"></img>
+    <img src="/strategy.gif" alt="" style="display: inline; vertical-align: top; margin-top: 5%; margin-left: 60px;">
     <p>get ceiling for yourself today! and join <a href="https://hackclub.enterprise.slack.com/archives/C0AJLBLDM8E" style="filter: sepia(10000%) hue-rotate(180deg) saturate(500%)">#ceiling</a></p>
-    <model-viewer camera-controls touch-action="pan-y" auto-rotate poster="ceiling.jpg" src="model.glb" shadow-intensity="1" alt="ceiling"></model-viewer>
-    <img src="seal.gif" alt="" style="position: absolute; right: 60px; transform: translateY(-150px)">
+    <model-viewer camera-controls touch-action="pan-y" auto-rotate poster="/ceiling.jpg" src="/model.glb" shadow-intensity="1" alt="ceiling"></model-viewer>
+    <img src="/seal.gif" alt="" style="position: absolute; right: 60px; transform: translateY(-150px)">
 
     <div id="ceilings">
         <p>GET CEILING!!!</p>
     </div>
-    <p>chat with more ceiling lovers in <a href="https://hackclub.enterprise.slack.com/archives/C0AJLBLDM8E" style="filter: sepia(10000%) hue-rotate(180deg) saturate(500%)">#ceiling</a> on slack :)</p>
+
+    <ol>
+        <li>make a project for 8 hours</li>
+        <li>hackatime track the 8 hours!!!!!</li>
+        <li>submit the 8 hours</li>
+        <li>get ceiling in your house</li>
+    </ol>
+
+    <p>WORK EIGHT HOURS.</p>
+    <p>GET CEILING (same size as original) (60cm!!!!!!)</p>
+    <p>if youre in the US we will amazon it for you. if you're not... we'll give u a card grant...</p>
+
+    <p>if u submit additional 2 hours (10 hours total), you may or may not get additional prizes (like ceiling stickersheet. Who knows!) (if you only want the additional prize w/o ceiling, you can submit just 4 hours!)</p>
+
+    <p>you can submit software & hackatimable stuff AND up to 33% of ur project can be lapse asset making (like art, music, etc). 1/3 lapse for assets!</p>
+
+    <p>the deadline is march 22nd at midnight in pst!!!</p>
+    <p>for more faqs and up to date info check <a href="https://hackclub.enterprise.slack.com/archives/C0AJLBLDM8E" style="filter: sepia(10000%) hue-rotate(180deg) saturate(500%)">#ceiling</a> channel faq</p>
 
     <div id="submits">
         <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit6.gif" alt="" onload="window.l()">
+            <img src="/submit6.gif" alt="" onload="window.l()">
         </a>
         <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit2.gif" alt="" onload="window.l()">
+            <img src="/submit2.gif" alt="" onload="window.l()">
         </a>
         <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit3.gif" alt="" onload="window.l()">
+            <img src="/submit3.gif" alt="" onload="window.l()">
         </a>
         <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit4.gif" alt="" onload="window.l()">
+            <img src="/submit4.gif" alt="" onload="window.l()">
         </a>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <img src="mp3.gif" alt="" onload="window.l()">
+            <img src="/mp3.gif" alt="" onload="window.l()">
         </a>
         <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit5.gif" alt="" onload="window.l()">
+            <img src="/submit5.gif" alt="" onload="window.l()">
         </a>
 
     </div>
