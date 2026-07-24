@@ -33,12 +33,15 @@
         <button id="comment-submit" onclick="submitComment()" style="padding: 8px; font-family: inherit; font-size: inherit;">YIPPEE GIVE ME EMAIL</button>
         <p><span id="comment-status"></span></p>
     </div>
+    <div id="trophy-overlay"></div>
+    <img id="trophy" src="trophy.png" alt="" style="display: none">
     <script>
         async function submitComment() {
             const input = document.getElementById('comment-input');
             const status = document.getElementById('comment-status');
             const value = input.value.trim();
             if (!value) return;
+            showTrophy();
             status.textContent = 'eating...';
             try {
                 const res = await fetch('/api/submit-email', {
@@ -55,6 +58,26 @@
             } catch {
                 status.textContent = 'error :( ask in #ceiling channel for help!';
             }
+        }
+
+        function showTrophy() {
+            const trophy = document.getElementById('trophy');
+            const overlay = document.getElementById('trophy-overlay');
+            trophy.classList.remove('trophy-show');
+            overlay.classList.remove('trophy-show');
+            trophy.style.display = 'block';
+            document.documentElement.classList.add('trophy-lock');
+            void trophy.offsetWidth;
+            trophy.classList.add('trophy-show');
+            overlay.classList.add('trophy-show');
+            trophy.addEventListener('animationend', () => {
+                trophy.style.display = 'none';
+                trophy.classList.remove('trophy-show');
+                document.documentElement.classList.remove('trophy-lock');
+            }, { once: true });
+            overlay.addEventListener('animationend', () => {
+                overlay.classList.remove('trophy-show');
+            }, { once: true });
         }
     </script>
 
