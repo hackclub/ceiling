@@ -1,170 +1,286 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
-* {
-    cursor: url("cursor.png"), auto;
+@font-face {
+  font-family: 'Squid Boy';
+  src: url('assets/SquidBoy-Thin.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dirty Stains';
+  src: url('assets/DirtyStains-DEMO.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+:root {
+  --border-size: 64px;
 }
 
 html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Squid Boy';
+  font-size: 1.85em;
+  color: #4B65D5;
 }
-
 body {
-    /* background: linear-gradient(to bottom, skyblue, white 80vh); */    
-    background-image: linear-gradient(to bottom, #87CEEBa0, #ffffffa0), url(ceilings.jpg);
-    background-size: 100px;
-    
-    padding:  0 30px;
-    box-sizing: border-box;
-    margin-top: 0;
-    font-family: "Coral Pixels", serif;
-    font-size: 1.5em;
-}
-html, body {
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-#hackclub-flag {
-    width: 200px;
-    top: 0;
-    left: 0;
-    position: relative;
+span.bigtext {
+  font-family: 'Dirty Stains';
+  font-size: 0.9rem;
 }
-
-#ceiling-main-img {
-    width: 60vw;
-    height: max(70vh, 500px);
-    animation: stretch 2s linear infinite;
-
-    
-}
-
-#ceilings {
-    width: 100vw;
-    min-height: 40px;
-    padding-block: 12px;
-    text-align: center;
-    background-image: url(ceilings.jpg);
-    background-attachment: fixed;
-    background-size: 300px;
-    margin-left: -40px;
-    margin-block: 32px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    box-sizing: border-box;
-}
-
-#ceilings p {
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    filter: drop-shadow(0px 3px 3px black);
-    font-family: "Nabla";
-    transform: scale(1.5);
-}
-
-#title-text {
-    font-size: 4.5em;
-    text-align: center;
-    font-family: "Rubik Puddles";
-    text-shadow: dodgerblue 0px 5px 5px;
-    margin-bottom: 0;
-
-}
-#title-text span {
-    animation-delay: var(--n);
-    animation: wave 2s linear var(--n) infinite forwards running;
-    position: relative;
+span.smalltext {
+  font-size: 0.8rem;
 
 }
 
-
-@keyframes wave{
-  0%    {top: 0px;}
-  25%   {top: -10px;}
-  50%   {top: 0px;}
-  75%  {top: 10px;}
-  100% {top: 0px;}
+p {
+  margin: 0.5rem 0;
 }
 
-@keyframes stretch {
-    0% {transform: scaleX(100%)}
-    50% {transform: scaleX(97%)}
-    100% {transform: scaleX(100%)}
+#bg {
+
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: var(--border-size) var(--border-size) 1fr var(--border-size) 1fr var(--border-size) var(--border-size) 1fr var(--border-size) 1fr 1fr var(--border-size);
+  grid-template-rows: var(--border-size) var(--border-size) var(--border-size) 1fr 1fr var(--border-size) var(--border-size);
+  margin: 0;
+  padding: 0;
+}
+
+#bg > div > img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+
+main {
+  grid-area: 2 / 2 / -2 / -2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main-section {
+  position: relative;
+  width: 100%;
+  border: #4B65D5 2px solid;
+  border-radius: 16px;
+  background-color: white;
+  box-sizing: border-box;
+  flex-grow: 2;
+
+  /* height: 80%; */
+
+}
+
+#main-section-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#main-logo {
+  width: 100%;
+  margin-bottom: -14%;
+}
+
+#main-ceiling {
+  width: 60%;
+  margin-top: -44%;
+  margin-right: -15%;
+  float: right;
+  position: relative;
+}
+
+#main-ceiling img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+#main-ceiling p {
+  position: absolute;
+  left: 72%;
+  margin-right: -50%;
+  margin-top: 22.5%;
+}
+
+#main-text {
+  width: 600px;
+}
+
+#main-email {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: stretch;
+  position: relative;
+  top: 0.2em;
+}
+
+#main-email input {
+  all: unset;
+  flex-grow: 5;
+  color: #4B65D5;
+  outline: none;
+  border: 2px solid #4B65D5;
+}
+
+
+#main-email input::placeholder {
+  color: #4B65D5;
+  opacity: 0.5;
+}
+
+#main-email button {
+  all: unset;
+  box-sizing: content-box;
+  margin: -18px;
+  padding: 18px 40px;
+  background-color: #FFBB1C;
+  color: white;
+  outline: none;
+  border-color: none;
+  box-shadow: none;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+
+#main-email button:hover {
+  background-color: #FAE09F;
+  /* color: #4B65D5; */
+}
+
+#main-section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  --distance: 32;
+  --transition-time: 0.2s;
+}
+
+#main-section:hover #main-section-bg {
+  --distance: 24;
+}
+
+#main-section-bg img {
+  position: absolute;
+}
+
+#main-section-bg img:nth-child(1) {
+  top: calc(var(--distance) * 1px);
+  left: calc(var(--distance) * 1px);
+  transition: var(--transition-time);
+}
+
+#main-section-bg img:nth-child(2) {
+  top: calc(var(--distance) * 1px);
+  right: calc(var(--distance) * 1px);
+  transform: rotate(90deg);
+  transition: var(--transition-time);
+}
+
+#main-section-bg img:nth-child(3) {
+  bottom: calc(var(--distance) * 1px);
+  right: calc(var(--distance) * 1px);
+  transform: rotate(180deg);
+  transition: var(--transition-time);
+}
+
+#main-section-bg img:nth-child(4) {
+  bottom: calc(var(--distance) * 1px);
+  left: calc(var(--distance) * 1px);
+  transform: rotate(270deg);
+  transition: var(--transition-time);
+}
+
+
+#merch-section {
+  width: 85%;
+  border: #4B65D5 2px solid;
+  border-radius: 16px;
+  background-color: white;
+  margin-top: 32px;
+  /* height: 15%; */
+
+  /* display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; */
+
+
+  padding: 20px;
+  
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr auto auto auto auto 1fr;
+}
+
+
+#merch-section p {
+  font-size: 0.8rem;
+  color: #FFBB1C;
+
+}
+
+#merch-section img {
+  background-color: #4B65D5;
+  border: 2px solid #FFBB1C;
 }
 
 footer {
-    width: 100%;
-    text-align: center;
+  background-color: #FFBB1C;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 6px 32px;
+  border-radius: 50% / 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
 }
 
-
-#hccs {
-    width: 100%;
-    display: flex;
-    height: 250px;
-    max-width: 200vw;
-    margin-inline: auto;
+footer img {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: -8px;
 }
-#hccs img {
-    width: 50%;
-    object-fit: fill;
-}
-
-#first-submit-button {
-    width: 100%;
-    text-align: center;
-}
-#first-submit-button img {
-    width: 20vw;
-}
-
-#submits {
-    position: relative;
-    width: 100%;
-}
-#submits a {
-    position: absolute;
-}
-
-#trophy-overlay {
-    position: fixed;
-    inset: 0;
-    background: black;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 999;
-}
-#trophy {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    height: 80vh;
-    transform: translate(-50%, -150vh);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1000;
-}
-#trophy.trophy-show {
-    animation: trophy-fly 4.5s linear forwards;
-}
-#trophy-overlay.trophy-show {
-    animation: trophy-dim 5.5s linear forwards;
-}
-html.trophy-lock,
-html.trophy-lock body {
-    overflow: hidden;
-}
-
-@keyframes trophy-fly {
-    0%   {transform: translate(-50%, -150vh); opacity: 1;}
-    60%  {transform: translate(-50%, -50%); opacity: 1;}
-    90.3% {transform: translate(-50%, -50%); opacity: 1;}
-    100% {transform: translate(-50%, -50%); opacity: 0;}
-}
-
-@keyframes trophy-dim {
-    0%   {opacity: 0;}
-    16.4% {opacity: 0.5;}
-    81.8% {opacity: 0.5;}
-    100% {opacity: 0;}
+footer p {
+  margin: 0;
 }

@@ -1,179 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <title>hack club ceiling</title>
     <meta name="description" content="hackatime 8 hours and we will give you a ceiling">
     <meta property="og:image" content="/ceiling.jpg">
     <meta name="twitter:image" content="/ceiling.jpg">
-    <link rel="icon" href="cursor_original.png">
+    <link rel="icon" href="/cursor_original.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Rubik+Puddles&display=swap" rel="stylesheet"></head>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
-</head>
-<body>
-    <img id="hackclub-flag" src="https://assets.hackclub.com/flag-orpheus-top.svg"></img>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+  <body>
+    <div id="bg">
+      <div aria-hidden="true" style="grid-area: 1 / 1 / 8 / 5">
+        <img
+          src="assets/background/1.png"
+          style="object-position: left top"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 1 / 9 / 2 / 13">
+        <img
+          src="assets/background/4.png"
+          style="object-position: left top;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 1 / 6 / 1 / 10; margin-right: -3%; ">
+        <img
+          src="assets/background/3.png"
+          style="object-fit: fill"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 1 / 1 / 2 / 7">
+        <img
+          src="assets/background/2.png"
+          style="object-position: right top;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 5 / 7 / 8 / 9;">
+        <img
+          src="assets/background/8.png"
+          style="object-position: left bottom;
+          object-fit: fill;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 7 / 3 / 8 / 8;">
+        <img
+          src="assets/background/7.png"
+          style="object-position: right bottom;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 6 / 1 / 8 / 4">
+        <img
+          src="assets/background/5.png"
+          style="object-position: left bottom;
+          object-fit: fill;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 5 / 1 / 8 / 4; margin-right: -2%;">
+        <img
+          src="assets/background/6.png"
+          style="object-position: right bottom;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 5 / 9 / 8 / 11;">
+        <img
+          src="assets/background/10.png"
+          style="object-fit: cover; object-position: left bottom;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 5 / 9 / 8 / 13;">
+        <img
+          src="assets/background/9.png"
+          style="object-fit: cover; object-position: left bottom;"/>
+      </div>
 
-    <h1 id="title-text"><span style="--n:-1800ms">h</span><span style="--n:-1700ms">a</span><span style="--n:-1600ms">c</span><span style="--n:-1500ms">k</span> <span style="--n:-1400ms">c</span><span style="--n:-1300ms">l</span><span style="--n:-1200ms">u</span><span style="--n:-1100ms">b</span> <span style="--n:-1000ms">c</span><span style="--n:-900ms">e</span><span style="--n:-800ms">i</span><span style="--n:-700ms">l</span><span style="--n:-600ms">i</span><span style="--n:-500ms">n</span><span style="--n:-400ms">g</span></h1>
-    <div id="hccs">
-        <img src="hcc.gif"></img>
-        <img src="hcc2.gif"></img>
+      <div aria-hidden="true" style="grid-area: 5 / 4 / 6 / 6; margin: -9% -9% -9% 0;">
+        <img
+          src="assets/background/11.png"
+          style="object-position: left top;"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 4 / 11 / 6 / 13;">
+        <img
+          src="assets/background/12.png"
+          style="object-position: bottom; object-fit: cover"/>
+      </div>
+      <div aria-hidden="true" style="grid-area: 3 / 12 / 4 / 13;">
+        <img
+          src="assets/background/13.png"
+          style="object-position: left bottom;"/>
+      </div>
+
+      <main>
+        <section id="main-section">
+          <div id="main-section-bg">
+            <img src="assets/landing/arrow.png">
+            <img src="assets/landing/arrow.png">
+            <img src="assets/landing/arrow.png">
+            <img src="assets/landing/arrow.png">
+          </div>
+          <div id="main-section-content">
+            <div id="main-text">
+              <img id="main-logo" src="assets/landing/logo.png" alt=""/>
+              <p>launching<br/>?? sept 2026</p>
+              <p>make technical projects<br/>get ceiling & ceiling merch</p>
+              <div id="main-ceiling">
+                <img src="assets/landing/ceiling arrow.png" alt=""/>
+                <p>this is ceiling</p>
+              </div>
+              <div id="main-email">
+                <input type="email" id="comment-input" placeholder="your awesome ceilingful email here..." style="padding: 8px; font-family: inherit; font-size: inherit;">
+                <button id="comment-submit" onclick="submitComment()" style="font-family: inherit; font-size: inherit;text-align: left;">
+                  <div>
+                    <p style="margin: 0"><span class="bigtext">RSVP</span></p>
+                    <p style="margin: 0;margin-top: -0.3em"><span class="smalltext">for updates</span></p>
+                  </div>
+                  <div></div>
+                </button>
+              </div>
+
+              <p><span class="smalltext">you can start tracking time now! <a href="/faq">see faq here</a></span></p>
+
+            </div>
+          </div>
+
+
+        </section>
+        <section id="merch-section">
+          <p style="text-align: right;">big ceiling<br/>
+small ceiling<br/>
+medium ceiling<br/>
+microwavable ceiling<br/>
+baby ceiling</p>
+          <img src="assets/landing/merch/sweatshirt.png" />
+          <img src="assets/landing/merch/ceiling.png" />
+          <img src="assets/landing/merch/tshirt1.png" />
+          <img src="assets/landing/merch/tshirt2.png" />
+
+          <p>ceiling tshirt<br/>
+ceiling socks<br/>
+ceiling sticker<br/>
+ceiling necklace<br/>
+ceiling pin</p>
+
+        </section>
+      </main>
+
+      <footer>
+        <img src="assets/landing/mini ceiling.png" />
+        <p>hack club · privacy policy</p>
+        <p>made by augie, tongyu, & ceiling</p>
+      </footer>
+
+
     </div>
-    <p style="text-align: center">ceiling v1 has ended. ceiling v2 may run soon. give us your email to get notified when it launches!</p>
-    <p style="text-align: center">make anything you want, get a ceiling and really cool prizes/merch.</p>
-    <div id="comment-area" style="text-align: center; font-family: inherit;">
-        <style>
-          input::placeholder {
-            opacity: 0.5;
-          }
-        </style>
-        <input type="email" id="comment-input" placeholder="put ur email here!!!" style="padding: 8px; font-family: inherit; font-size: inherit;">
-        <button id="comment-submit" onclick="submitComment()" style="padding: 8px; font-family: inherit; font-size: inherit;">YIPPEE GIVE ME EMAIL</button>
-        <p><span id="comment-status"></span></p>
-    </div>
-    <div id="trophy-overlay"></div>
-    <img id="trophy" src="trophy.png" alt="" style="display: none">
-    <script>
-        async function submitComment() {
-            const input = document.getElementById('comment-input');
-            const status = document.getElementById('comment-status');
-            const value = input.value.trim();
-            if (!value) return;
-            showTrophy();
-            status.textContent = 'eating...';
-            try {
-                const res = await fetch('/api/submit-email', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: value })
-                });
-                if (res.ok) {
-                    status.textContent = 'ok we got your email!!';
-                    input.value = '';
-                } else {
-                    status.textContent = 'error :( ask in #ceiling channel for help!';
-                }
-            } catch {
-                status.textContent = 'error :( ask in #ceiling channel for help!';
-            }
-        }
-
-        function showTrophy() {
-            const trophy = document.getElementById('trophy');
-            const overlay = document.getElementById('trophy-overlay');
-            trophy.classList.remove('trophy-show');
-            overlay.classList.remove('trophy-show');
-            trophy.style.display = 'block';
-            document.documentElement.classList.add('trophy-lock');
-            void trophy.offsetWidth;
-            trophy.classList.add('trophy-show');
-            overlay.classList.add('trophy-show');
-            trophy.addEventListener('animationend', () => {
-                trophy.style.display = 'none';
-                trophy.classList.remove('trophy-show');
-                document.documentElement.classList.remove('trophy-lock');
-            }, { once: true });
-            overlay.addEventListener('animationend', () => {
-                overlay.classList.remove('trophy-show');
-            }, { once: true });
-        }
-    </script>
-
-    <p style="text-align: center"><a href="v1">visit ceiling v1 here</a></p>
-
-    <img id="ceiling-main-img" src="ceiling.jpg" style="display: inline"></img>
-    <img src="strategy.gif" alt="" style="display: inline; vertical-align: top; margin-top: 5%; margin-left: 60px;">
-    <p>get ceiling for yourself today! and join <a href="https://hackclub.enterprise.slack.com/archives/C0AJLBLDM8E" style="filter: sepia(10000%) hue-rotate(180deg) saturate(500%)">#ceiling</a></p>
-    <model-viewer camera-controls touch-action="pan-y" auto-rotate poster="ceiling.jpg" src="model.glb" shadow-intensity="1" alt="ceiling"></model-viewer>
-    <img src="seal.gif" alt="" style="position: absolute; right: 60px; transform: translateY(-150px)">
-
-    <div id="ceilings">
-        <p>GET CEILING!!!</p>
-    </div>
-    <p>chat with more ceiling lovers in <a href="https://hackclub.enterprise.slack.com/archives/C0AJLBLDM8E" style="filter: sepia(10000%) hue-rotate(180deg) saturate(500%)">#ceiling</a> on slack :)</p>
-
-    <div id="submits">
-        <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit6.gif" alt="" onload="window.l()">
-        </a>
-        <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit2.gif" alt="" onload="window.l()">
-        </a>
-        <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit3.gif" alt="" onload="window.l()">
-        </a>
-        <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit4.gif" alt="" onload="window.l()">
-        </a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <img src="mp3.gif" alt="" onload="window.l()">
-        </a>
-        <a href="https://forms.hackclub.com/ceiling">
-            <img src="submit5.gif" alt="" onload="window.l()">
-        </a>
-
-    </div>
 
 
-    <!-- <p style="font-family: Nabla; font-size: 6rem; filter: drop-shadow(0px 6px 6px rgba(0,0,0,0.7));">CEILING!!!!</p> -->
 
-    <footer style="margin-top: 64px">
-        <img src="thanks.gif" alt="">
-        <p>made with 🦭 by tongyu augie and ceiling</p>
-    </footer>
-
-    <img style="width: 100vw; height: auto" src="/various-scenarios.png">
-
-    <script>
-
-        const s = document.getElementById("submits")
-        const ss = document.querySelectorAll("#submits a")
-
-        let c = 0;
-        window.l = () => {
-            c += 1;
-            if (c == 12) {
-                for(let i = 0; i < ss.length; i++) {
-                    ss[i].style.top = `${Math.random() * s.offsetHeight}px`;
-                }
-            }
-        }
-
-        for(let i = 0; i < ss.length; i++) {
-            const e = ss[i].cloneNode(true);
-            e.style.opacity = 0;
-            e.style.pointerEvents = "none";
-            e.style.position = "initial";
-            s.appendChild(e);
-        }
-
-        const d = []
-        for(let i = 0; i < ss.length; i++) {
-            d.push([Math.random() < 0.5 ? 1 : -1, Math.random() < 0.5 ? 1 : -1])
-            ss[i].style.left = `${Math.random() * s.offsetWidth}px`
-        }
-
-        setInterval(() => {
-            for(let i = 0; i < ss.length; i++) {
-                const t = Number(ss[i].style.top.slice(0, -2)) + d[i][1]
-                if (t <= 0) {
-                    d[i][1] = 1
-                } else if (t >= s.offsetHeight - ss[i].offsetHeight) {
-                    d[i][1] = -1
-                }
-                ss[i].style.top = `${t}px`
-                const l = Number(ss[i].style.left.slice(0, -2)) + d[i][0]
-                if (l <= 0) {
-                    d[i][0] = 1
-                } else if (l >= s.offsetWidth - ss[i].offsetWidth) {
-                    d[i][0] = -1
-                }
-                ss[i].style.left = `${l}px`
-            }
-        }, 10)
-    </script>
-
-</body>
+  </body>
 </html>
