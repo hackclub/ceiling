@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Squid Boy';
-  src: url('assets/SquidBoy-Thin.otf') format('otf');
+  font-family: 'Franie';
+  src: url('assets/Franie-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,17 +16,22 @@
   --border-size: 64px;
 }
 
+a, button {
+  cursor: url('assets/pointer.png') 0 0, pointer;
+}
+
 html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Squid Boy';
-  font-size: 1.85em;
+  font-family: 'Franie';
+  font-size: 1.2em;
   color: #4B65D5;
 }
 
 body {
+  cursor: url('assets/cursor.png') 0 0, auto;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -37,15 +42,29 @@ body {
 
 span.bigtext {
   font-family: 'Dirty Stains';
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 span.smalltext {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 p {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+}
+
+p:has(span.smalltext) {
+  margin-top: 0.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+a:hover {
+  text-decoration-style: solid;
 }
 
 #bg {
@@ -107,12 +126,12 @@ main {
 
 #main-logo {
   width: 100%;
-  margin-bottom: -14%;
+  margin-bottom: -8%;
 }
 
 #main-ceiling {
   width: 60%;
-  margin-top: -15%;
+  margin-top: -18%;
   margin-right: -15%;
   float: right;
   position: relative;
@@ -167,6 +186,7 @@ main {
   color: white;
   border-radius: 50%;
   transition: 0.2s;
+  cursor: url('assets/pointer.png'), pointer;
 }
 
 #main-email button:hover {
@@ -232,14 +252,16 @@ main {
 }
 
 #merch-section p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #FFBB1C;
   align-content: center;
+  margin: 0;
 }
 
 #merch-section img {
   background-color: #4B65D5;
   border: 2px solid #FFBB1C;
+  max-width: 150px;
 }
 
 footer {
@@ -247,7 +269,7 @@ footer {
   position: absolute;
   bottom: 0;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-align: center;
   padding: 6px 32px;
   border-radius: 50% / 100%;
@@ -269,6 +291,53 @@ footer img {
 
 footer p {
   margin: 0;
+}
+
+#trophy-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#trophy {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 80vh;
+  transform: translate(-50%, -150vh);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#trophy.trophy-show {
+  animation: trophy-fly 4.5s linear forwards;
+}
+
+#trophy-overlay.trophy-show {
+  animation: trophy-dim 5.5s linear forwards;
+}
+
+html.trophy-lock,
+html.trophy-lock body {
+  overflow: hidden;
+}
+
+@keyframes trophy-fly {
+  0%   { transform: translate(-50%, -150vh); opacity: 1; }
+  60%  { transform: translate(-50%, -50%); opacity: 1; }
+  90.3% { transform: translate(-50%, -50%); opacity: 1; }
+  100% { transform: translate(-50%, -50%); opacity: 0; }
+}
+
+@keyframes trophy-dim {
+  0%   { opacity: 0; }
+  16.4% { opacity: 0.5; }
+  81.8% { opacity: 0.5; }
+  100% { opacity: 0; }
 }
 
 @media (max-width: 1250px) {

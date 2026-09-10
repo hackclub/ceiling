@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <title>hack club ceiling</title>
-    <meta name="description" content="hackatime 8 hours and we will give you a ceiling">
-    <meta property="og:image" content="/ceiling.jpg">
-    <meta name="twitter:image" content="/ceiling.jpg">
-    <link rel="icon" href="/cursor_original.png">
+    <meta name="description" content="make projects, get ceiling & ceiling merch">
+    <meta property="og:image" content="/assets/ogimg.png">
+    <meta name="twitter:image" content="/assets/ogimg.png">
+    <link rel="icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,14 +97,14 @@
           <div id="main-text">
             <img id="main-logo" src="assets/landing/logo.png" alt=""/>
             <div id="main-ceiling">
-              <img src="assets/landing/ceiling arrow.png" alt=""/>
+              <img src="assets/landing/ceiling_arrow.png" alt=""/>
               <p>this is ceiling</p>
             </div>
 
-            <p>launching<br/>?? sept 2026</p>
+            <p>launching<br/>sept/oct 2026</p>
             <p>make technical projects<br/>get ceiling & ceiling merch</p>
             <div id="main-email">
-              <input type="email" id="comment-input" placeholder="your awesome ceilingful email here..." style="padding: 8px; font-family: inherit; font-size: inherit;">
+              <input type="email" id="comment-input" placeholder="your awesome email here..." style="padding: 8px; font-family: inherit; font-size: inherit;" onkeydown="if(event.key==='Enter')submitComment()">
               <button id="comment-submit" onclick="submitComment()" style="font-family: inherit; font-size: inherit;text-align: left;">
                 <div>
                   <p style="margin: 0"><span class="bigtext">RSVP</span></p>
@@ -113,8 +113,9 @@
                 <div></div>
               </button>
             </div>
+            <p><span class="smalltext" id="comment-status"></span></p>
 
-            <p><span class="smalltext">you can start tracking time now! <a href="/faq">see faq here</a></span></p>
+            <p><span class="smalltext">you can start software projects via hackatime from 11 sept. faq coming soon.</p>
 
           </div>
         </div>
@@ -127,23 +128,86 @@ small ceiling<br/>
 medium ceiling<br/>
 microwavable ceiling<br/>
 baby ceiling</p>
-        <img style="grid-area: img1;" src="assets/landing/merch/sweatshirt.png" />
+        <img style="grid-area: img1;" src="assets/landing/merch/blanket.png" />
         <img style="grid-area: img2;" src="assets/landing/merch/ceiling.png" />
         <img style="grid-area: img3; justify-self: end;" src="assets/landing/merch/tshirt1.png" />
         <img style="grid-area: img4; justify-self: end;" src="assets/landing/merch/tshirt2.png" />
 
         <p style="grid-area: righttext;">ceiling tshirt<br/>
 ceiling socks<br/>
-ceiling sticker<br/>
+ceiling stickers<br/>
 ceiling necklace<br/>
 ceiling pin</p>
 
       </section>
     </main>
 
+    <div id="trophy-overlay"></div>
+    <img id="trophy" src="trophy.png" alt="" style="display: none">
+
+    <script>
+      function showTrophy() {
+        const trophy = document.getElementById('trophy');
+        const overlay = document.getElementById('trophy-overlay');
+        trophy.classList.remove('trophy-show');
+        overlay.classList.remove('trophy-show');
+        trophy.style.display = 'block';
+        document.documentElement.classList.add('trophy-lock');
+        void trophy.offsetWidth;
+        trophy.classList.add('trophy-show');
+        overlay.classList.add('trophy-show');
+        trophy.addEventListener('animationend', () => {
+          trophy.style.display = 'none';
+          trophy.classList.remove('trophy-show');
+          document.documentElement.classList.remove('trophy-lock');
+        }, { once: true });
+        overlay.addEventListener('animationend', () => {
+          overlay.classList.remove('trophy-show');
+        }, { once: true });
+      }
+
+      async function submitComment() {
+        const input = document.getElementById('comment-input');
+        const button = document.getElementById('comment-submit');
+        const status = document.getElementById('comment-status');
+        const email = input.value.trim();
+
+        if (!email || !email.includes('@')) {
+          input.style.borderColor = 'red';
+          return;
+        }
+
+        input.style.borderColor = '#4B65D5';
+        button.disabled = true;
+        button.style.opacity = '0.5';
+        status.textContent = 'eating...';
+        showTrophy();
+
+        try {
+          const res = await fetch('/api/submit-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+
+          if (res.ok) {
+            input.value = '';
+            status.textContent = 'ok we got your email!!';
+          } else {
+            status.textContent = 'error :( ask in #ceiling channel for help!';
+          }
+        } catch {
+          status.textContent = 'error :( ask in #ceiling channel for help!';
+        }
+
+        button.disabled = false;
+        button.style.opacity = '1';
+      }
+    </script>
+
     <footer>
-      <img src="assets/landing/mini ceiling.png" />
-      <p>hack club · privacy policy</p>
+      <img src="assets/landing/mini_ceiling.png" />
+      <p><a href="https://hackclub.com" target="_blank">hack club</a> · <a href="https://hackclub.com/privacy-and-terms" target="_blank">privacy policy</a></p>
       <p>made by augie, tongyu, & ceiling</p>
     </footer>
 
