@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Franie';
-  src: url('assets/Franie-Regular.otf') format('otf');
+  src: url('assets/Franie-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Dirty Stains';
-  src: url('assets/DirtyStains-DEMO.otf') format('otf');
+  src: url('assets/DirtyStains-DEMO.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
