@@ -211,7 +211,9 @@ ceiling pin</p>
         document.getElementById('referral-popup').classList.add('show');
       }
 
+      let lastGetCode = 0;
       async function getReferralCode() {
+        if (Date.now() - lastGetCode < 3000) return;
         const input = document.getElementById('referral-email-input');
         const status = document.getElementById('referral-copy-status');
         const email = input.value.trim();
@@ -219,6 +221,7 @@ ceiling pin</p>
           status.textContent = 'enter a valid email!';
           return;
         }
+        lastGetCode = Date.now();
         status.textContent = 'checking...';
         try {
           const res = await fetch('/api/get-referral', {
@@ -277,7 +280,10 @@ ceiling pin</p>
         }, { once: true });
       }
 
+      let lastSubmit = 0;
       async function submitComment() {
+        if (Date.now() - lastSubmit < 3000) return;
+
         const input = document.getElementById('comment-input');
         const button = document.getElementById('comment-submit');
         const status = document.getElementById('comment-status');
@@ -288,6 +294,7 @@ ceiling pin</p>
           return;
         }
 
+        lastSubmit = Date.now();
         input.style.borderColor = '#4B65D5';
         button.disabled = true;
         button.style.opacity = '0.5';
