@@ -54,7 +54,9 @@ p {
 }
 
 p:has(span.smalltext) {
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  line-height: 80%;
 }
 
 a {
@@ -162,6 +164,7 @@ main {
   justify-content: stretch;
   position: relative;
   top: 0.2em;
+  margin-bottom: 1rem;
 }
 
 #main-email input {
@@ -340,6 +343,179 @@ html.trophy-lock body {
   100% { opacity: 0; }
 }
 
+/* referral popup */
+#referral-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#referral-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#referral-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: white;
+  border: 2px solid #4B65D5;
+  border-radius: 16px;
+  padding: 48px 80px;
+  z-index: 901;
+  max-width: 795px;
+  width: calc(100% - 48px);
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#referral-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#referral-title {
+  font-family: 'Dirty Stains';
+  font-size: 2rem;
+  color: #4B65D5;
+  margin: 0 0 8px;
+}
+
+#referral-desc {
+  font-size: 1rem;
+  color: #4B65D5;
+  margin-bottom: 24px;
+}
+
+#referral-desc p {
+  margin: 0 0 8px;
+}
+
+.referral-label {
+  font-family: 'Dirty Stains';
+  font-size: 1.125rem;
+  color: #FFBB1C;
+  margin: 0 0 8px !important;
+}
+
+#referral-url-box {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  overflow: hidden;
+}
+
+#referral-url-box input {
+  all: unset;
+  flex: 1;
+  border: 2px solid #4B65D5;
+  border-right: none;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B65D5;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#referral-url-box input::placeholder {
+  color: #4B65D5;
+  opacity: 0.43;
+}
+
+#referral-url-box button {
+  all: unset;
+  background: #FFBB1C;
+  border: 2px solid #FFBB1C;
+  color: white;
+  padding: 8px 24px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: url('assets/pointer.png') 0 0, pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#referral-url-box button:hover {
+  background: #FAE09F;
+}
+
+#referral-url-box.has-code {
+  background: #FFBB1C;
+  border: 1px solid #FFBB1C;
+  cursor: url('assets/pointer.png') 0 0, pointer;
+  transition: filter 0.15s;
+  position: relative;
+  padding: 0 8px;
+}
+
+#referral-url-box.has-code:hover {
+  filter: brightness(1.08);
+}
+
+#referral-url-box.has-code:hover #referral-url:not(.copied) {
+  font-size: 0;
+}
+
+#referral-url-box.has-code:hover #referral-url:not(.copied)::after {
+  content: 'click to copy';
+  font-size: 1rem;
+}
+
+#referral-url-box.has-code #referral-url.copied {
+  font-size: 0;
+}
+
+#referral-url-box.has-code #referral-url.copied::after {
+  content: 'copied!';
+  font-size: 1rem;
+}
+
+#referral-url-box.has-code #referral-url {
+  flex: 1;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#referral-url-box.has-code img {
+  margin-left: 8px;
+  flex-shrink: 0;
+  height: 1.75em;
+  width: auto;
+
+}
+
+#referral-count {
+  font-family: 'Dirty Stains';
+  font-size: 1.125rem;
+  color: #4B65D5;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+#referral-copy-status {
+  font-size: 0.75rem;
+  color: #4B65D5;
+  min-height: 1.2em;
+  margin: 4px 0 0 !important;
+}
+
 @media (max-width: 1250px) {
   #merch-section {
     grid-template-columns: 1fr auto auto 1fr;
@@ -449,5 +625,21 @@ html.trophy-lock body {
 
   #main-email button {
     margin: -8px;
+  }
+
+  #referral-popup {
+    padding: 32px 24px;
+  }
+
+  #referral-title {
+    font-size: 1.5rem;
+  }
+
+  #referral-desc {
+    font-size: 0.85rem;
+  }
+
+  #referral-url-box.has-code #referral-url {
+    font-size: 0.8rem;
   }
 }
