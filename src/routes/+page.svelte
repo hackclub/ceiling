@@ -167,7 +167,7 @@
 </script>
 
 <svelte:head>
-	<title>hack club ceiling</title>
+	<title>ceiling by hack club</title>
 	<meta name="description" content="make projects, get ceiling & ceiling merch" />
 	<meta property="og:image" content="/assets/ogimg.png" />
 	<meta name="twitter:image" content="/assets/ogimg.png" />
