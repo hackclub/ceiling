@@ -1,0 +1,102 @@
+@font-face {
+	font-family: 'Franie';
+	src: url('/assets/Franie-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Franie';
+	src: url('/assets/Franie-Italic.otf') format('opentype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Franie';
+	src: url('/assets/Franie-Bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Franie';
+	src: url('/assets/Franie-BoldItalic.otf') format('opentype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Dirty Stains';
+	src: url('/assets/DirtyStains-DEMO.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--border-size: 64px;
+}
+
+a, button {
+	cursor: url('/assets/pointer.png') 0 0, pointer;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: 'Franie';
+	font-size: 1.2em;
+	color: #4B65D5;
+}
+
+body {
+	cursor: url('/assets/cursor.png') 0 0, auto;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	box-sizing: border-box;
+}
+
+span.bigtext {
+	font-family: 'Dirty Stains';
+	font-size: 1.2rem;
+}
+
+span.smalltext {
+	font-size: 0.75rem;
+}
+
+p {
+	margin: 1rem 0;
+}
+
+p:has(span.smalltext) {
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+	line-height: 80%;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+a:hover {
+	text-decoration-style: solid;
+}
+
+html.trophy-lock,
+html.trophy-lock body {
+	overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+	body {
+		padding-top: 5dvw;
+	}
+}
